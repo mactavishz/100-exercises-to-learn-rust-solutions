@@ -23,14 +23,14 @@ To enforce stricter rules, we must keep the fields private[^newtype].
 We can then provide public methods to interact with a `Ticket` instance.
 Those public methods will have the responsibility of upholding our invariants (e.g. a title must not be empty).
 
-If all fields are private, it is no longer possible to create a `Ticket` instance directly using the struct
+If at least one field is private it is no longer possible to create a `Ticket` instance directly using the struct
 instantiation syntax:
 
 ```rust
 // This won't work!
 let ticket = Ticket {
     title: "Build a ticket system".into(),
-    description: "Create a system that can manage tickets across a Kanban board".into(),
+    description: "A Kanban board".into(),
     status: "Open".into()
 };
 ```

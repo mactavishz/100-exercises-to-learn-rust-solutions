@@ -47,7 +47,8 @@ The compiler will reject this code:
 error: future cannot be sent between threads safely
     |
 5   |     tokio::spawn(example());
-    |                  ^^^^^^^^^ future returned by `example` is not `Send`
+    |                  ^^^^^^^^^ 
+    | future returned by `example` is not `Send`
     |
 note: future is not `Send` as this value is used across an await
     |
@@ -55,7 +56,8 @@ note: future is not `Send` as this value is used across an await
     |         -------- has type `Rc<i32>` which is not `Send`
 12  |     // A `.await` point
 13  |     yield_now().await;
-    |                 ^^^^^ await occurs here, with `non_send` maybe used later
+    |                 ^^^^^ 
+    |   await occurs here, with `non_send` maybe used later
 note: required by a bound in `tokio::spawn`
     |
 164 |     pub fn spawn<F>(future: F) -> JoinHandle<F::Output>
@@ -84,7 +86,10 @@ trait Future {
     type Output;
     
     // Ignore `Pin` and `Context` for now
-    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output>;
+    fn poll(
+      self: Pin<&mut Self>, 
+      cx: &mut Context<'_>
+    ) -> Poll<Self::Output>;
 }
 ```
 

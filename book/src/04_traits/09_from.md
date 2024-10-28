@@ -3,7 +3,11 @@
 Let's go back to where our string journey started:
 
 ```rust
-let ticket = Ticket::new("A title".into(), "A description".into(), "To-Do".into());
+let ticket = Ticket::new(
+    "A title".into(), 
+    "A description".into(), 
+    "To-Do".into()
+);
 ```
 
 We now know enough to start unpacking what `.into()` is doing here.
@@ -14,7 +18,11 @@ This is the signature of the `new` method:
 
 ```rust
 impl Ticket {
-    pub fn new(title: String, description: String, status: String) -> Self {
+    pub fn new(
+        title: String, 
+        description: String, 
+        status: String
+    ) -> Self {
         // [...]
     }
 }
@@ -108,7 +116,7 @@ let title = String::from("A title");
 
 We've been primarily using `.into()`, though.\
 If you check out the [implementors of `Into`](https://doc.rust-lang.org/std/convert/trait.Into.html#implementors)
-you won't find `Into<&str> for String`. What's going on?
+you won't find `Into<String> for &str`. What's going on?
 
 `From` and `Into` are **dual traits**.\
 In particular, `Into` is implemented for any type that implements `From` using a **blanket implementation**:
