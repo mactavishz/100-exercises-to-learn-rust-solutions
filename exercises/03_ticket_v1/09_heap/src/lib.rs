@@ -14,7 +14,7 @@ mod tests {
     #[test]
     fn string_size() {
         // assume in 64-bit system
-        assert_eq!(size_of::<String>(), 8 * 3);
+        assert_eq!(size_of::<String>(), size_of::<usize>() * 3);
     }
 
     #[test]
@@ -25,6 +25,6 @@ mod tests {
         // If you're curious, check out the "Type layout" section of The Rust Reference
         // https://doc.rust-lang.org/reference/type-layout.html for more information.
         // assume in 64-bit system
-        assert_eq!(size_of::<Ticket>(), 8 * 3 * 3);
+        assert_eq!(size_of::<Ticket>(), size_of::<usize>() * 3 * 3);
     }
 }
