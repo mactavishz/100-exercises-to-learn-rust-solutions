@@ -18,6 +18,9 @@ after = ["exercise-linker"]
 [output.html]
 git-repository-url = "https://github.com/mainmatter/100-exercises-to-learn-rust"
 
+[output.html.playground]
+runnable = false
+
 [output.pandoc]
 optional = true
 hosted-html = "https://rust-exercises.com/100-exercises/"
@@ -49,8 +52,8 @@ sansfontoptions = [
 ]
 # You can get these fonts here: https://fonts.google.com/selection?query=noto+color+
 monofont = "Noto Sans Mono"
-mainfontfallback = ["Noto Color Emoji:mode=harf"]
-sansfontfallback = ["Noto Color Emoji:mode=harf"]
+mainfontfallback = ["Open Sans:style=Regular"]
+sansfontfallback = ["Open Sans:style=Regular"]
 monofontfallback = [
   "Noto Color Emoji:mode=harf",
 ]
@@ -90,8 +93,8 @@ sansfontoptions = [
 ]
 # You can get these fonts here: https://fonts.google.com/selection?query=noto+color+
 monofont = "Noto Sans Mono"
-mainfontfallback = ["Noto Color Emoji:mode=harf"]
-sansfontfallback = ["Noto Color Emoji:mode=harf"]
+mainfontfallback = ["Open Sans:style=Regular"]
+sansfontfallback = ["Open Sans:style=Regular"]
 monofontfallback = [
   "Noto Color Emoji:mode=harf",
 ]
@@ -121,8 +124,8 @@ metadata-file = "metadata.yml"
 [output.pandoc.profile.html.variables]
 # You can get these fonts here: https://fonts.google.com/selection?query=noto+color+
 monofont = "Noto Sans Mono"
-mainfontfallback = ["Noto Color Emoji:mode=harf"]
-sansfontfallback = ["Noto Color Emoji:mode=harf"]
+mainfontfallback = ["Open Sans:style=Regular"]
+sansfontfallback = ["Open Sans:style=Regular"]
 monofontfallback = [
   "Noto Color Emoji:mode=harf",
 ]

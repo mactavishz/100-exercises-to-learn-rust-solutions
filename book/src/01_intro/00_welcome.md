@@ -24,12 +24,12 @@ It has been designed to be interactive and hands-on.
 to be delivered in a classroom setting, over 4 days: each attendee advances
 through the lessons at their own pace, with an experienced instructor providing
 guidance, answering questions and diving deeper into the topics as needed.\
-If you're interested in attending one of our training sessions, or if you'd like to
-bring this course to your company, please [get in touch](https://mainmatter.com/contact/).
+You can sign up for the next tutored session on [our website](https://ti.to/mainmatter/rust-from-scratch-jan-2025).
+If you'd like to organise a private session for your company, please [get in touch](https://mainmatter.com/contact/).
 
-You can also follow the course on your own, but we recommend you find a friend or
+You can also take the courses on your own, but we recommend you find a friend or
 a mentor to help you along the way should you get stuck. You can
-also find solutions to all exercises in the
+find solutions for all exercises in the
 [`solutions` branch of the GitHub repository](https://github.com/mainmatter/100-exercises-to-learn-rust/tree/solutions).
 
 ## Formats
@@ -67,17 +67,23 @@ Each exercise is structured as a Rust package.
 The package contains the exercise itself, instructions on what to do (in `src/lib.rs`), and a test suite to
 automatically verify your solution.
 
-### `wr`, the workshop runner
+### Tools
 
-To verify your solutions, we've provided a tool that will guide you through the course.
-It is the `wr` CLI (short for "workshop runner").
-Install it with:
+To work through this course, you'll need:
 
-```bash
-cargo install --locked workshop-runner
-```
+- [**Rust**](https://www.rust-lang.org/tools/install).
+  If `rustup` is already installed on your system, run `rustup update` (or another appropriate command depending on how you installed Rust on your system) to ensure you're running on the latest stable version.
+- _(Optional but recommended)_ An IDE with Rust autocompletion support.
+  We recommend one of the following:
+  - [RustRover](https://www.jetbrains.com/rust/);
+  - [Visual Studio Code](https://code.visualstudio.com) with the [`rust-analyzer`](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) extension.
 
-In a new terminal, navigate back to the top-level folder of the repository.
+### Workshop runner, `wr`
+
+To verify your solutions, we've also provided a tool to guide you through the course: the `wr` CLI, short for "workshop runner".
+Install `wr` by following the instructions on [its website](https://mainmatter.github.io/rust-workshop-runner/).
+
+Once you have `wr` installed, open a new terminal and navigate to the top-level folder of the repository.
 Run the `wr` command to start the course:
 
 ```bash
