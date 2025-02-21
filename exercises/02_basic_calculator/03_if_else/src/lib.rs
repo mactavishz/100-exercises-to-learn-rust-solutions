@@ -1,9 +1,13 @@
-/// Return `true` if `n` is even, `false` otherwise.
-fn is_even(n: u32) -> bool {
+/// Return `12` if `n` is even,
+/// `13` if `n` is divisible by `3`,
+/// `17` otherwise.
+fn magic_number(n: u32) -> u32 {
     if n % 2 == 0 {
-        true
+        12
+    } else if n % 3 == 0 {
+        13
     } else {
-        false
+        17
     }
 }
 
