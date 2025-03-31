@@ -31,6 +31,15 @@ impl TicketStore {
     pub fn add_ticket(&mut self, ticket: Ticket) {
         self.tickets.push(ticket);
     }
+
+    // lifetime elision
+    pub fn to_dos(&self) -> Vec<&Ticket> {
+        return self
+            .tickets
+            .iter()
+            .filter(|&t| t.status == Status::ToDo)
+            .collect::<Vec<&Ticket>>();
+    }
 }
 
 #[cfg(test)]
