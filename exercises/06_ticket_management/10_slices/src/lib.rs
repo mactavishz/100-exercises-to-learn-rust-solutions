@@ -1,6 +1,10 @@
 // TODO: Define a function named `sum` that takes a reference to a slice of `u32` and returns the sum of all
 //  elements in the slice.
 
+fn sum(slice: &[u32]) -> u32 {
+    return slice.iter().fold(0, |acc, e| acc + e);
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
