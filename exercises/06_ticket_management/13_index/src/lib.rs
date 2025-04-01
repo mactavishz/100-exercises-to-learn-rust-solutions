@@ -58,6 +58,28 @@ impl TicketStore {
     }
 }
 
+impl std::ops::Index<&TicketId> for TicketStore {
+    type Output = Ticket;
+    fn index(&self, idx: &TicketId) -> &Self::Output {
+        if idx.0 >= self.tickets.len() as u64 || self.tickets.is_empty() {
+            panic!("TicketId is out of bound")
+        } else {
+            return &self.tickets[idx.0 as usize];
+        }
+    }
+}
+
+impl std::ops::Index<TicketId> for TicketStore {
+    type Output = Ticket;
+    fn index(&self, idx: TicketId) -> &Self::Output {
+        if idx.0 >= self.tickets.len() as u64 || self.tickets.is_empty() {
+            panic!("TicketId is out of bound")
+        } else {
+            return &self.tickets[idx.0 as usize];
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use crate::{Status, TicketDraft, TicketStore};
